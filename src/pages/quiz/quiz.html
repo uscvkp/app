@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Quiz</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list inset>
+    <h3><span class="num">{{index+1}}.</span> &nbsp;{{current.question}}</h3>
+    <br>
+    <button ion-item
+            *ngFor  = "let choice of current.choices;  let i=index"
+            (click) = "grade(i,current, quiz)">
+
+      {{letter[i]}}. &nbsp;{{choice}}
+
+    </button>
+  </ion-list>
+</ion-content>
